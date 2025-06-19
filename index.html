@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WebGIS Faskes & Fasum di Yogyakarta</title>
+  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link href="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css" rel="stylesheet" />
+</head>
+<body>
+
+  <div id="landing-page">
+    <div class="hero-container">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Persebaran Faskes & Fasum Yogyakarta</h1>
+            <p class="hero-subtitle">
+                Temukan lokasi, cari rute tercepat, dan dapatkan informasi detail mengenai fasilitas kesehatan dan fasilitas umum di seluruh wilayah Kota Yogyakarta, Daerah Istimewa Yogyakarta.
+            </p>
+            <div class="cta-buttons-group">
+                <a href="#" id="enter-app-faskes-btn" class="cta-button">Buka Peta Faskes</a>
+                <a href="#" id="enter-app-fasum-btn" class="cta-button secondary">Buka Peta Fasilitas Umum</a>
+            </div>
+        </div>
+    </div>
+    <main class="features-section">
+        <div class="container">
+            <h2>Fitur Utama Aplikasi</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>Visualisasi Peta</h3>
+                    <p>Lihat persebaran semua fasilitas dalam antarmuka peta yang mudah digunakan.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Pencarian Cepat</h3>
+                    <p>Cari fasilitas spesifik berdasarkan nama dengan cepat dan akurat.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚗</div>
+                    <h3>Rute & Radius</h3>
+                    <p>Temukan fasilitas dalam radius tertentu dari lokasi Anda dan lihat berbagai alternatif rute perjalanan.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Filter & Statistik</h3>
+                    <p>Saring data berdasarkan kategori dan lihat statistik interaktif dalam bentuk grafik.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section class="about-section">
+        <div class="container">
+            <h2>Tentang Kami</h2>
+            <p class="about-subtitle">Proyek ini dikembangkan oleh tim mahasiswa yang berdedikasi untuk memenuhi tugas mata kuliah Sistem Informasi Geografis Terapan.</p>
+            <div class="team-grid">
+                <div class="team-member-card">
+                    <h3>Aldy Lois Pranata Sinurat (117220021)</h3>
+                </div>
+                <div class="team-member-card">
+                    <h3>Dimas Wijoyo K (117220046)</h3>
+                </div>
+                <div class="team-member-card">
+                    <h3>Muammar Hilmy (117220034)</h3>
+                </div>
+                <div class="team-member-card">
+                    <h3>Hafizh Ryan Ramadhan (117220033)</h3>
+                </div>
+                <div class="team-member-card">
+                    <h3>Sujatmiko Nugroho Jati (117220026)</h3>
+                </div>
+                <div class="team-member-card">
+                    <h3>Saiful Haq (117220050) </h3>
+                </div>
+                <div class="team-member-card">
+                    <h3>Althaaf Diya Ulhaq (117220039)</h3>
+                </div>
+                <div class="team-member-card">
+                    <h3>Achmad Sofyan (117220058)</h3>
+                </div>
+                <div class="team-member-card">
+                    <h3>Amirul Dzakiraihan Anshori (117220064) </h3>
+                </div>
+                <div class="team-member-card">
+                    <h3>Ivan Candra (117220039) </h3>
+                </div>
+            </div>
+            <div class="logo-container">
+                <img src="assets/LOGO SALOME .png" alt="Logo Tim Salome" class="team-logo">
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>© 2025 WebGIS Faskes & Fasum Kota Yogyakarta. Dibuat dengan Leaflet & OpenStreetMap.</p>
+    </footer>
+  </div>
+
+  <div id="app-container-faskes" class="app-container">
+    <header id="app-header-faskes" class="app-header">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWclC482QAv_wUGSlX4TV4IO4nY7f2v5_bjg&s" alt="Logo Yogyakarta" class="header-logo"/>
+      <h1>Persebaran Faskes di Yogyakarta</h1>
+    </header>
+    <div id="main-container-faskes" class="main-container">
+      <div id="map-toolbar-faskes" class="map-toolbar">
+        <button class="toolbar-btn" data-panel-id="panel-search-faskes" title="Pencarian Faskes"><i class="fas fa-search"></i></button>
+        <button class="toolbar-btn" data-panel-id="panel-tools-faskes" title="Alat & Analisis"><i class="fas fa-tools"></i></button>
+        <button class="toolbar-btn" data-panel-id="panel-layers-faskes" title="Filter & Statistik"><i class="fas fa-chart-bar"></i></button>
+        <button class="toolbar-btn" data-panel-id="panel-report-faskes" title="Lapor & Ulas"><i class="fas fa-exclamation-triangle"></i></button>
+      </div>
+      <div id="panel-container-faskes" class="panel-container">
+        <div id="panel-search-faskes" class="tool-panel">
+          <button class="close-panel-btn">×</button>
+          <h3>Pencarian Faskes & Alamat</h3>
+          <div class="panel-content">
+            <div class="dashboard-card">
+                <h4>Cari Faskes (Nama)</h4>
+                <div class="search-container">
+                    <input type="text" id="search-input-faskes" placeholder="Ketik nama faskes...">
+                    <div id="search-results-faskes"></div>
+                </div>
+            </div>
+            <div class="dashboard-card" style="margin-top: 20px;">
+                <h4>Cari Alamat</h4>
+                <input type="text" id="address-search-input-faskes" placeholder="Ketik alamat (misal: Jl. Malioboro)">
+                <button id="geocode-address-btn-faskes" class="sidebar-button" style="margin-top: 10px;">Cari Alamat</button>
+                <div id="geocode-results-faskes"></div>
+            </div>
+          </div>
+        </div>
+        <div id="panel-tools-faskes" class="tool-panel">
+          <button class="close-panel-btn">×</button>
+          <h3>Alat & Analisis</h3>
+          <div class="panel-content">
+            <div class="dashboard-card">
+              <h4>Pencarian Radius</h4>
+              <label for="radius-slider-faskes">Radius Pencarian (km):</label>
+              <div class="slider-wrapper">
+                <input type="range" id="radius-slider-faskes" min="1" max="15" value="3" step="1">
+                <span id="radius-value-faskes">3 km</span>
+              </div>
+              <button id="find-by-mylocation-btn-faskes" class="sidebar-button">Dari Lokasi Saya</button>
+              <button id="find-by-map-click-btn-faskes" class="sidebar-button">Pilih Titik di Peta</button>
+            </div>
+            <div class="dashboard-card">
+                <h4>Mode Rute</h4>
+                <button id="custom-route-btn-faskes" class="sidebar-button">Buat Rute Kustom (A → B)</button>
+            </div>
+          </div>
+        </div>
+        <div id="panel-layers-faskes" class="tool-panel">
+            <button class="close-panel-btn">×</button>
+            <h3>Filter & Statistik</h3>
+            <div class="panel-content">
+                <div class="dashboard-card">
+                    <h4>Filter Data Faskes</h4>
+                    <div class="custom-select-wrapper"><select id="kategori-filter-faskes"><option value="Semua">Tampilkan Semua</option></select></div>
+                </div>
+                <div class="dashboard-card">
+                    <h4>Pengaturan Layer Batas Wilayah</h4>
+                    <div class="layer-control-group"><label for="area-color-picker-faskes">Warna Garis Batas:</label><input type="color" id="area-color-picker-faskes" value="#E67E22"></div>
+                    <div class="layer-control-group"><label for="area-fill-color-picker-faskes">Warna Area (Polygon):</label><input type="color" id="area-fill-color-picker-faskes" value="#E67E22"></div>
+                    <div class="layer-control-group"><label for="area-opacity-slider-faskes">Opasitas Layer:</label><div class="slider-wrapper"><input type="range" id="area-opacity-slider-faskes" min="0" max="1" step="0.1" value="0.9"><span id="area-opacity-value-faskes">0.9</span></div></div>
+                </div>
+                <div class="dashboard-card">
+                    <h4>Statistik Cepat</h4>
+                    <div id="stats-content-faskes"><p><strong>Total Faskes:</strong> <span id="rs-count-faskes">0</span></p><p><strong>Kategori Terbanyak:</strong> <span id="kategori-terbanyak-faskes">-</span></p><p><strong>Kategori Tersedikit:</strong> <span id="kategori-tersedikit-faskes">-</span></p></div>
+                </div>  
+                <div class="dashboard-card"><h4>Grafik Kategori Faskes</h4><div id="chart-wrapper-faskes" class="chart-wrapper"><canvas id="category-chart-faskes"></canvas></div></div>
+                <div class="dashboard-card"><h4>Unduh Data</h4><div class="download-buttons-group"><button id="download-json-btn-faskes" class="sidebar-button download-option"><i class="fas fa-file-code"></i> JSON</button><button id="download-csv-btn-faskes" class="sidebar-button download-option"><i class="fas fa-file-csv"></i> Excel (CSV)</button><button id="download-pdf-btn-faskes" class="sidebar-button download-option"><i class="fas fa-file-pdf"></i> PDF</button></div></div>
+            </div>
+        </div>
+        <div id="panel-report-faskes" class="tool-panel">
+          <button class="close-panel-btn">×</button>
+          <h3>Laporkan Kesalahan / Beri Ulasan Faskes</h3>
+          <div class="panel-content">
+            <div class="report-form-card">
+                <h4>Form Laporan & Ulasan Faskes</h4>
+                <div class="form-group"><label for="report-faskes-name-faskes"><i class="fas fa-hospital"></i> Faskes yang Dilaporkan:</label><input type="text" id="report-faskes-name-faskes" readonly placeholder="Pilih faskes di peta..."><input type="hidden" id="report-faskes-id-faskes"></div>
+                <div class="form-group"><label for="report-type-faskes"><i class="fas fa-tag"></i> Jenis Laporan:</label><select id="report-type-faskes"><option value="">Pilih Jenis Laporan</option><option value="Informasi Salah">Informasi Salah</option><option value="Lokasi Tidak Akurat">Lokasi Tidak Akurat</option><option value="Faskes Tutup">Faskes Tutup</option><option value="Ulasan Umum">Ulasan Umum</option><option value="Lainnya">Lainnya</option></select></div>
+                <div class="form-group"><label for="report-description-faskes"><i class="fas fa-comment-alt"></i> Deskripsi / Ulasan Anda:</label><textarea id="report-description-faskes" rows="5" placeholder="Jelaskan detail laporan atau berikan ulasan Anda..."></textarea></div>
+                <button id="submit-report-btn-faskes" class="submit-report-btn"><i class="fas fa-paper-plane"></i> Kirim Laporan / Ulasan</button>
+                <div id="report-status-message-faskes" class="report-status-message"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="map-container-faskes" class="map-container"><div id="status-panel-faskes" class="status-panel"></div><div id="map-faskes" class="map"></div></div>
+    </div>
+  </div>
+
+  <div id="app-container-fasum" class="app-container">
+    <header id="app-header-fasum" class="app-header">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWclC482QAv_wUGSlX4TV4IO4nY7f2v5_bjg&s" alt="Logo Yogyakarta" class="header-logo"/>
+      <h1>Persebaran Fasilitas Umum di Yogyakarta</h1>
+    </header>
+    <div id="main-container-fasum" class="main-container">
+      <div id="map-toolbar-fasum" class="map-toolbar">
+        <button class="toolbar-btn" data-panel-id="panel-search-fasum" title="Pencarian Fasilitas Umum"><i class="fas fa-search"></i></button>
+        <button class="toolbar-btn" data-panel-id="panel-tools-fasum" title="Alat & Analisis"><i class="fas fa-tools"></i></button>
+        <button class="toolbar-btn" data-panel-id="panel-layers-fasum" title="Filter & Statistik"><i class="fas fa-chart-bar"></i></button>
+        <button class="toolbar-btn" data-panel-id="panel-report-fasum" title="Lapor & Ulas"><i class="fas fa-exclamation-triangle"></i></button>
+      </div>
+      <div id="panel-container-fasum" class="panel-container">
+        <div id="panel-search-fasum" class="tool-panel">
+          <button class="close-panel-btn">×</button>
+          <h3>Pencarian Fasilitas Umum & Alamat</h3>
+          <div class="panel-content">
+            <div class="dashboard-card">
+                <h4>Cari Fasilitas Umum (Nama)</h4>
+                <div class="search-container"><input type="text" id="search-input-fasum" placeholder="Ketik nama fasilitas umum..."><div id="search-results-fasum"></div></div>
+            </div>
+            <div class="dashboard-card" style="margin-top: 20px;">
+                <h4>Cari Alamat</h4>
+                <input type="text" id="address-search-input-fasum" placeholder="Ketik alamat (misal: Jl. Malioboro)">
+                <button id="geocode-address-btn-fasum" class="sidebar-button" style="margin-top: 10px;">Cari Alamat</button>
+                <div id="geocode-results-fasum"></div>
+            </div>
+          </div>
+        </div>
+        <div id="panel-tools-fasum" class="tool-panel">
+          <button class="close-panel-btn">×</button>
+          <h3>Alat & Analisis</h3>
+          <div class="panel-content">
+            <div class="dashboard-card">
+              <h4>Pencarian Radius</h4>
+              <label for="radius-slider-fasum">Radius Pencarian (km):</label>
+              <div class="slider-wrapper"><input type="range" id="radius-slider-fasum" min="1" max="15" value="3" step="1"><span id="radius-value-fasum">3 km</span></div>
+              <button id="find-by-mylocation-btn-fasum" class="sidebar-button">Dari Lokasi Saya</button>
+              <button id="find-by-map-click-btn-fasum" class="sidebar-button">Pilih Titik di Peta</button>
+            </div>
+            <div class="dashboard-card">
+                <h4>Mode Rute</h4>
+                <button id="custom-route-btn-fasum" class="sidebar-button">Buat Rute Kustom (A → B)</button>
+            </div>
+          </div>
+        </div>
+        <div id="panel-layers-fasum" class="tool-panel">
+            <button class="close-panel-btn">×</button>
+            <h3>Filter & Statistik</h3>
+            <div class="panel-content">
+                <div class="dashboard-card">
+                    <h4>Filter Data Fasilitas Umum</h4>
+                    <div class="custom-select-wrapper"><select id="kategori-filter-fasum"><option value="Semua">Tampilkan Semua</option></select></div>
+                </div>
+                <div class="dashboard-card">
+                    <h4>Pengaturan Layer Batas Wilayah</h4>
+                    <div class="layer-control-group"><label for="area-color-picker-fasum">Warna Garis Batas:</label><input type="color" id="area-color-picker-fasum" value="#E67E22"></div>
+                    <div class="layer-control-group"><label for="area-fill-color-picker-fasum">Warna Area (Polygon):</label><input type="color" id="area-fill-color-picker-fasum" value="#E67E22"></div>
+                    <div class="layer-control-group"><label for="area-opacity-slider-fasum">Opasitas Layer:</label><div class="slider-wrapper"><input type="range" id="area-opacity-slider-fasum" min="0" max="1" step="0.1" value="0.9"><span id="area-opacity-value-fasum">0.9</span></div></div>
+                </div>
+                <div class="dashboard-card">
+                    <h4>Statistik Cepat</h4>
+                    <div id="stats-content-fasum"><p><strong>Total Fasilitas Umum:</strong> <span id="rs-count-fasum">0</span></p><p><strong>Kategori Terbanyak:</strong> <span id="kategori-terbanyak-fasum">-</span></p><p><strong>Kategori Tersedikit:</strong> <span id="kategori-tersedikit-fasum">-</span></p></div>
+                </div>
+                <div class="dashboard-card"><h4>Grafik Kategori Fasilitas Umum</h4><div id="chart-wrapper-fasum" class="chart-wrapper"><canvas id="category-chart-fasum"></canvas></div></div>
+                <div class="dashboard-card"><h4>Unduh Data</h4><div class="download-buttons-group"><button id="download-json-btn-fasum" class="sidebar-button download-option"><i class="fas fa-file-code"></i> JSON</button><button id="download-csv-btn-fasum" class="sidebar-button download-option"><i class="fas fa-file-csv"></i> Excel (CSV)</button><button id="download-pdf-btn-fasum" class="sidebar-button download-option"><i class="fas fa-file-pdf"></i> PDF</button></div></div>
+            </div>
+        </div>
+        <div id="panel-report-fasum" class="tool-panel">
+          <button class="close-panel-btn">×</button>
+          <h3>Laporkan Kesalahan / Beri Ulasan Fasilitas Umum</h3>
+          <div class="panel-content">
+            <div class="report-form-card">
+                <h4>Form Laporan & Ulasan Fasilitas Umum</h4>
+                <div class="form-group"><label for="report-faskes-name-fasum"><i class="fas fa-building"></i> Fasilitas Umum yang Dilaporkan:</label><input type="text" id="report-faskes-name-fasum" readonly placeholder="Pilih fasilitas umum di peta..."><input type="hidden" id="report-faskes-id-fasum"></div>
+                <div class="form-group"><label for="report-type-fasum"><i class="fas fa-tag"></i> Jenis Laporan:</label><select id="report-type-fasum"><option value="">Pilih Jenis Laporan</option><option value="Informasi Salah">Informasi Salah</option><option value="Lokasi Tidak Akurat">Lokasi Tidak Akurat</option><option value="Fasilitas Tutup">Fasilitas Tutup</option><option value="Ulasan Umum">Ulasan Umum</option><option value="Lainnya">Lainnya</option></select></div>
+                <div class="form-group"><label for="report-description-fasum"><i class="fas fa-comment-alt"></i> Deskripsi / Ulasan Anda:</label><textarea id="report-description-fasum" rows="5" placeholder="Jelaskan detail laporan atau berikan ulasan Anda..."></textarea></div>
+                <button id="submit-report-btn-fasum" class="submit-report-btn"><i class="fas fa-paper-plane"></i> Kirim Laporan / Ulasan</button>
+                <div id="report-status-message-fasum" class="report-status-message"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="map-container-fasum" class="map-container"><div id="status-panel-fasum" class="status-panel"></div><div id="map-fasum" class="map"></div></div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+  <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
+  <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

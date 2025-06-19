@@ -1,0 +1,384 @@
+{
+  "type": "FeatureCollection",
+  "name": "Puskesmas Kota Yogyakarta",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Puskesmas",
+        "Nama": "Puskesmas Danurejan I",
+        "Alamat": "Jl. Hayam Wuruk No.24, Tegal Panggung, Danurejan, Kota Yogyakarta",
+        "Telepon": "(0274) 562143",
+        "Layanan": "Non Rawat Inap",
+        "Kabupaten": "Kota Yogyakarta",
+        "gambar": "Puskesmas_Danurejan_I.jpg",
+        "X": 110.3739,
+        "Y": -7.7947
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.3739,
+          -7.7947
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Puskesmas",
+        "Nama": "Puskesmas Danurejan II",
+        "Alamat": "Jl. Gajah Mada No.43, Purwokinanti, Pakualaman, Kota Yogyakarta",
+        "Telepon": "(0274) 512965",
+        "Layanan": "Non Rawat Inap",
+        "Kabupaten": "Kota Yogyakarta",
+        "gambar": "Puskesmas_Danurejan_II.jpg",
+        "X": 110.3756,
+        "Y": -7.7997
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.3756,
+          -7.7997
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Puskesmas",
+        "Nama": "Puskesmas Gedongtengen",
+        "Alamat": "Jl. Pringgokusuman No.22, Pringgokusuman, Gedongtengen, Kota Yogyakarta",
+        "Telepon": "(0274) 513303",
+        "Layanan": "Non Rawat Inap",
+        "Kabupaten": "Kota Yogyakarta",
+        "gambar": "Puskesmas_Gedongtengen.jpg",
+        "X": 110.3589,
+        "Y": -7.7915
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.3589,
+          -7.7915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Puskesmas",
+        "Nama": "Puskesmas Gondokusuman I",
+        "Alamat": "Jl. Tunjung No.1, Baciro, Gondokusuman, Kota Yogyakarta",
+        "Telepon": "(0274) 545229",
+        "Layanan": "Non Rawat Inap",
+        "Kabupaten": "Kota Yogyakarta",
+        "gambar": "Puskesmas_Gondokusuman_I.jpg",
+        "X": 110.3833,
+        "Y": -7.7905
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.3833,
+          -7.7905
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Puskesmas",
+        "Nama": "Puskesmas Gondokusuman II",
+        "Alamat": "Jl. Kapas No.7, Semaki, Umbulharjo, Kota Yogyakarta",
+        "Telepon": "(0274) 557613",
+        "Layanan": "Non Rawat Inap",
+        "Kabupaten": "Kota Yogyakarta",
+        "gambar": "Puskesmas_Gondokusuman_II.jpg",
+        "X": 110.389,
+        "Y": -7.7975
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.389,
+          -7.7975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Puskesmas",
+        "Nama": "Puskesmas Gondomanan",
+        "Alamat": "Jl. Ibu Ruswo No.59, Prawirodirjan, Gondomanan, Kota Yogyakarta",
+        "Telepon": "(0274) 373368",
+        "Layanan": "Non Rawat Inap",
+        "Kabupaten": "Kota Yogyakarta",
+        "gambar": "Puskesmas_Gondomanan.jpg",
+        "X": 110.3687,
+        "Y": -7.8038
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.3687,
+          -7.8038
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Puskesmas",
+        "Nama": "Puskesmas Jetis",
+        "Alamat": "Jl. AM Sangaji No.58, Cokrodiningratan, Jetis, Kota Yogyakarta",
+        "Telepon": "(0274) 512964",
+        "Layanan": "Non Rawat Inap",
+        "Kabupaten": "Kota Yogyakarta",
+        "gambar": "Puskesmas_Jetis.jpg",
+        "X": 110.3662,
+        "Y": -7.7818
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.3662,
+          -7.7818
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Puskesmas",
+        "Nama": "Puskesmas Kotagede I",
+        "Alamat": "Jl. Karanglo No.9, Purbayan, Kotagede, Kota Yogyakarta",
+        "Telepon": "(0274) 375747",
+        "Layanan": "Non Rawat Inap",
+        "Kabupaten": "Kota Yogyakarta",
+        "gambar": "Puskesmas_Kotagede_I.jpg",
+        "X": 110.4005,
+        "Y": -7.8213
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.4005,
+          -7.8213
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Puskesmas",
+        "Nama": "Puskesmas Kotagede II",
+        "Alamat": "Jl. Mondorakan No.142, Prenggan, Kotagede, Kota Yogyakarta",
+        "Telepon": "(0.274) 376241",
+        "Layanan": "Non Rawat Inap",
+        "Kabupaten": "Kota Yogyakarta",
+        "gambar": "Puskesmas_Kotagede_II.jpg",
+        "X": 110.392,
+        "Y": -7.8172
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.392,
+          -7.8172
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Puskesmas",
+        "Nama": "Puskesmas Kraton",
+        "Alamat": "Jl. Gamelan No.8, Panembahan, Kraton, Kota Yogyakarta",
+        "Telepon": "(0274) 378453",
+        "Layanan": "Non Rawat Inap",
+        "Kabupaten": "Kota Yogyakarta",
+        "gambar": "Puskesmas_Kraton.jpg",
+        "X": 110.363,
+        "Y": -7.8087
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.363,
+          -7.8087
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Puskesmas",
+        "Nama": "Puskesmas Mantrijeron",
+        "Alamat": "Jl. Mayjend Sutoyo No.67, Mantrijeron, Kota Yogyakarta",
+        "Telepon": "(0274) 375746",
+        "Layanan": "Rawat Inap",
+        "Kabupaten": "Kota Yogyakarta",
+        "gambar": "Puskesmas_Mantrijeron.jpg",
+        "X": 110.3603,
+        "Y": -7.818
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.3603,
+          -7.818
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Puskesmas",
+        "Nama": "Puskesmas Mergangsan",
+        "Alamat": "Jl. Sisingamangaraja No.78, Brontokusuman, Mergangsan, Kota Yogyakarta",
+        "Telepon": "(0274) 372605",
+        "Layanan": "Non Rawat Inap",
+        "Kabupaten": "Kota Yogyakarta",
+        "gambar": "Puskesmas_Mergangsan.jpg",
+        "X": 110.3734,
+        "Y": -7.8174
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.3734,
+          -7.8174
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Puskesmas",
+        "Nama": "Puskesmas Ngampilan",
+        "Alamat": "Jl. Letjen Suprapto Ngabean, Ngampilan, Kota Yogyakarta",
+        "Telepon": "(0274) 566782",
+        "Layanan": "Non Rawat Inap",
+        "Kabupaten": "Kota Yogyakarta",
+        "gambar": "Puskesmas_Ngampilan.jpg",
+        "X": 110.3582,
+        "Y": -7.8016
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.3582,
+          -7.8016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Puskesmas",
+        "Nama": "Puskesmas Pakualaman",
+        "Alamat": "Jl. Purwanggan No.55 A, Purwokinanti, Pakualaman, Kota Yogyakarta",
+        "Telepon": "(0274) 512966",
+        "Layanan": "Non Rawat Inap",
+        "Kabupaten": "Kota Yogyakarta",
+        "gambar": "Puskesmas_Pakualaman.jpg",
+        "X": 110.375,
+        "Y": -7.8005
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.375,
+          -7.8005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Puskesmas",
+        "Nama": "Puskesmas Tegalrejo",
+        "Alamat": "Jl. Magelang No.110, Kricak, Tegalrejo, Kota Yogyakarta",
+        "Telepon": "(0274) 512963",
+        "Layanan": "Rawat Inap",
+        "Kabupaten": "Kota Yogyakarta",
+        "gambar": "Puskesmas_Tegalrejo.jpg",
+        "X": 110.3585,
+        "Y": -7.7778
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.3585,
+          -7.7778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Puskesmas",
+        "Nama": "Puskesmas Umbulharjo I",
+        "Alamat": "Jl. Veteran No.43, Warungboto, Umbulharjo, Kota Yogyakarta",
+        "Telepon": "(0274) 377899",
+        "Layanan": "Non Rawat Inap",
+        "Kabupaten": "Kota Yogyakarta",
+        "gambar": "Puskesmas_Umbulharjo_I.jpg",
+        "X": 110.3892,
+        "Y": -7.8105
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.3892,
+          -7.8105
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Puskesmas",
+        "Nama": "Puskesmas Umbulharjo II",
+        "Alamat": "Jl. Pramuka No.56, Pandeyan, Umbulharjo, Kota Yogyakarta",
+        "Telepon": "(0274) 388734",
+        "Layanan": "Non Rawat Inap",
+        "Kabupaten": "Kota Yogyakarta",
+        "gambar": "Puskesmas_Umbulharjo_II.jpg",
+        "X": 110.3923,
+        "Y": -7.805
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.3923,
+          -7.805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Puskesmas",
+        "Nama": "Puskesmas Wirobrajan",
+        "Alamat": "Jl. Kapt. P. Tendean No.48, Wirobrajan, Kota Yogyakarta",
+        "Telepon": "(0274) 373305",
+        "Layanan": "Non Rawat Inap",
+        "Kabupaten": "Kota Yogyakarta",
+        "gambar": "Puskesmas_Wirobrajan.jpg",
+        "X": 110.352,
+        "Y": -7.8028
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.352,
+          -7.8028
+        ]
+      }
+    }
+  ]
+}
